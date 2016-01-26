@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Erro</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="home.css"/>
+        <h:outputStylesheet library="css" name="link.css"/>
+        
+        <div style="background-image: url(resources/image/technology_hero.png)" class="primeira">
+            <div>
+                <p class="titulo">CRUD SELEÇÃO</p>
+                <p>Cadastro de Usuários</p>
+            </div>
+        </div>
+        
+        <div class="divs"><h:link value="Lista de Usuários" outcome="lista_usuario"/></div>
+        <div class="divs2"><h:link styleClass="divs2" value="Cadastrar Usuários" outcome="cadastra_usuario"/></div>
+        <div>
+            <p>ERRO!</p>
+            <p>Erro ao atualizar, tente novamente.</p>
+        </div>
+    </h:body>
+</html>
+

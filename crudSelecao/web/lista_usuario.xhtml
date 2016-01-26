@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="home.css"/>
+        <h:outputStylesheet library="css" name="link.css"/>
+        
+        <div style="background-image: url(resources/image/technology_hero.png)" class="primeira">
+            <div>
+                <p class="titulo">CRUD SELEÇÃO</p>
+                <p>Cadastro de Usuários</p>
+            </div>
+        </div>
+        <h:form>
+            <h:dataTable var="usu" value="#{usuarioBean.listaUsuarios}" border="5" style=" color: white; margin-left: 250px;">
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                    #{usu[1]}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                    #{usu[2]}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Tel</f:facet>
+                    #{usu[3]}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">End</f:facet>
+                    #{usu[4]}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">estado</f:facet>
+                    #{usu[5]}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ações</f:facet>
+                    <h:commandLink action="#{usuarioBean.excluir(usu[0])}">
+                    Excluir
+                    </h:commandLink>
+                    <h:commandLink action="atualiza_usuario" value="Atualizar">
+                        <f:actionListener binding="#{usuarioBean.carregarUsuario(usu[0])}"/>
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
